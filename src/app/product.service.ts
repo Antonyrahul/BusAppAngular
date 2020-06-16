@@ -67,4 +67,12 @@ export class ProductService {
   {
     return this.http.post("http://localhost:4123/updateseatcount",data)
   }
+  getuserprofileinfo(data):Observable<any>
+  {
+    return this.http.post("http://localhost:4123/getuserprofileinfo",data)
+  }
+  editprofile(data):Observable<any>
+  {
+    return this.http.post("http://localhost:4123/editprofile",data)
+  }
 }

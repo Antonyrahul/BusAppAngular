@@ -53,6 +53,9 @@
         <li *ngIf = "this.jwtToken&&this.isTravels!='true'"  class="nav-item active">
           <a class="nav-link" routerLink ="mytickets" >Tickets</a>
         </li>
+        <li *ngIf = "this.jwtToken"  class="nav-item active">
+          <a class="nav-link" routerLink ="profile" >Profile</a>
+        </li>
       </ul>
     <!-- <form class="form-inline my-2 my-lg-0">
         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">

@@ -9,6 +9,9 @@ import {EditrouteComponent} from './editroute/editroute.component'
 import {UsersdashboardComponent} from './usersdashboard/usersdashboard.component'
 import {BookticketComponent} from './bookticket/bookticket.component'
 import {MyticketsComponent} from './mytickets/mytickets.component'
+import {ProfileComponent} from './profile/profile.component'
+import {EditprofileComponent} from './editprofile/editprofile.component'
+
 
 
 const routes: Routes = [
@@ -47,6 +50,14 @@ const routes: Routes = [
   {
     path:"mytickets",
     component:MyticketsComponent
+  },
+  {
+    path:"profile",
+    component:ProfileComponent
+  },
+  {
+    path:"editprofile",
+    component:EditprofileComponent
   }
 ];
 

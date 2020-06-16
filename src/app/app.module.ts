@@ -14,6 +14,8 @@ import { EditrouteComponent } from './editroute/editroute.component';
 import { UsersdashboardComponent } from './usersdashboard/usersdashboard.component';
 import { BookticketComponent } from './bookticket/bookticket.component';
 import { MyticketsComponent } from './mytickets/mytickets.component';
+import { ProfileComponent } from './profile/profile.component';
+import { EditprofileComponent } from './editprofile/editprofile.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { MyticketsComponent } from './mytickets/mytickets.component';
     EditrouteComponent,
     UsersdashboardComponent,
     BookticketComponent,
-    MyticketsComponent
+    MyticketsComponent,
+    ProfileComponent,
+    EditprofileComponent
   ],
   imports: [
     BrowserModule,
