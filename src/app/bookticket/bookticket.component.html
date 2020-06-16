@@ -1,0 +1,153 @@
+
+<div *ngIf="this.accstatus=='pending'">
+    <h1>
+Your account has not been cleard by admin yet
+    </h1>
+    </div>
+<div *ngIf="this.accstatus!='pending'" class="signup-form">
+    <form *ngIf="this.isloaded == true"  [formGroup]= "routeform">
+	
+        <p class="hint-text">Route details</p>
+
+        <div class="form-group">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6"><h6>From:-</h6></div>
+                <div class="col-lg-6 col-md-6 col-sm-6"><h6>To:-</h6></div>
+				
+            </div> 
+           
+            
+			<div class="row">
+                
+				<div class="col-lg-6 col-md-6 col-sm-6"><input type="text" class="form-control" formControlName="start"  required="required" autocomplete="off" disabled></div>
+				<div class="col-lg-6 col-md-6 col-sm-6"><input type="text" class="form-control" formControlName="end" placeholder="to" required="required" disabled></div>
+            </div>      
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6"><h6>Dep Date:-</h6></div>
+                <div class="col-lg-6 col-md-6 col-sm-6"><h6>Dep Time:-</h6></div>
+				
+            </div>
+            <div class="row">
+				<div class="col-lg-6 col-md-6 col-sm-6"><input type="date" class="form-control" formControlName="depdate"  required="required" disabled></div>
+				<div class="col-lg-6 col-md-6 col-sm-6"><input type="time" class="form-control" formControlName="deptime"  required="required" disabled></div>
+            </div>  
+            <br>
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6"><h6>Duration in hours:-</h6></div>
+                    <div class="col-lg-6 col-md-6 col-sm-6"><input type="number" class="form-control" formControlName="duration"  required="required" disabled></div>
+                
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6"><h6>Starting Price:-</h6></div>
+                    <div class="col-lg-6 col-md-6 col-sm-6"><input type="number" class="form-control" formControlName="price"  required="required" disabled></div>
+                
+            </div>
+            <br>
+           
+    
+              <div class="row">
+                
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                    <input type="text" class="form-control" formControlName="busbrand" placeholder="BUS BRAND" required="required" disabled/>
+                    
+                </div>
+                <div class=" col-lg-6 col-md-6 col-sm-6">
+                    <input type="text" class="form-control" formControlName="busmodel" placeholder="BUS MODEL" required="required" disabled/>
+                    
+                </div>
+               
+    
+              </div>
+              <br>
+              <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6"><h6>TOTAL SEATS:-</h6></div>
+                <div class="col-lg-6 col-md-6 col-sm-6"><h6>BLOCKED SEATS:-</h6></div>
+                
+            </div> 
+    
+              <div class="row">
+                
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                    <input type="number"  formControlName="totalseats"  required="required" disabled />
+                   
+                </div>
+                <div class=" col-lg-6 col-md-6 col-sm-6">
+                    <input type="number"  formControlName="blockedseats"  required="required" disabled />
+                    
+                </div>
+               
+             
+               
+    
+              </div>
+              <br>
+    
+
+            <div class="row">
+                <div class="col-12">
+                    <select class = "form-control" formControlName = "busnumber" disabled>
+                        <option></option>
+                      
+                      </select>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-12">
+                <h6>Secect the amenities provided by you</h6>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            
+            <div class="col-lg-6 col-md-6 col-sm-6">
+                <input type="checkbox" id="radio1" formControlName="aircondition" disabled />
+                <label for="radio1">AC</label>
+            </div>
+            <div class=" col-lg-6 col-md-6 col-sm-6">
+                <input type="checkbox"  id="radio2" formControlName="sleeper" disabled/>
+                <label for="radio2">Sleeper</label>
+            </div>
+           
+
+          </div>
+
+          <div class="row">
+            
+            <div class="col-lg-6 col-md-6 col-sm-6">
+                <input type="checkbox" id="radio1" formControlName="snack" disabled />
+                <label for="radio1">Refreshments</label>
+            </div>
+            <div class=" col-lg-6 col-md-6 col-sm-6">
+                <input type="checkbox"  id="radio2" formControlName="fast" disabled/>
+                <label for="radio2">Super Fast</label>
+            </div>
+           
+
+          </div>
+          <br>
+          <div class="row">
+            <h5>Available seats:-{{this.availableseats}}</h5>
+          </div>
+
+          <div class="row">
+           
+                <div class="col-lg-12 col-md-12 col-sm-12"><input type="number" class="form-control" #notickets  required="required" max="10" placeholder="Number of tickets"></div>
+            
+        </div>
+       
+          <br><br>
+
+
+		<div  class="form-group">
+            <button type="submit" class="btn btn-success btn-lg btn-block" (click)="processdata(notickets.value);">BUY</button>
+        </div>
+        
+    </form>
+
+    
+</div>
+
+                         

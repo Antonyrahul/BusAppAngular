@@ -1,0 +1,93 @@
+<body>
+    <div class="tab">
+      <button class="tablinks" (click)="getUpcomingJourney();" >Upcoming Journey</button>
+      <button class="tablinks" (click)="getCompletedJourney();" >Completed Journey</button>
+      <button class="tablinks" (click)="getCancelledTickets();" >Cancelled Tickets</button>
+      
+    </div>
+  <br>
+
+  <div *ngIf="this.accstatus=='pending'">
+    <h1>
+Your account has not been cleard by admin yet
+    </h1>
+    </div>
+  <div *ngIf="this.accstatus!='pending'"  class="container">
+    <h4>My Tickets</h4>
+    <br>
+      <div class = "row">
+  
+  <div class="col-12">
+  
+  
+      <div  class="row">
+  
+        <div *ngFor="let details of result; let index=index;" class="col-12">
+          <div class="card h-100">
+          
+            <div class="card-body">
+              <h4 class="card-title">
+               {{details.start}}
+              </h4>
+              <div class="row">
+                <div class="col-4">
+                  <h5>{{details.start}}</h5>
+                </div>
+                <div class="col-4">
+                    <h5>TO</h5>
+                </div>
+                <div class="col-4">
+                  <h5>{{details.end}}</h5>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <h5>Departure:- {{details.depdate}} at {{details.deptime}}</h5>
+                </div>
+            </div>
+              <button *ngIf ="this.currenttab=='upcoming'" type="submit" class="btn btn-success btn-lg btn-block" (click)="cancelticket(details.routeid,details.depdate,details.deptime)">Cancel Ticket</button>
+            </div>
+  
+          </div>
+        </div>
+      </div>
+  
+     
+      <!-- /.row -->
+  
+    </div>
+  </div>
+  </div>
+  
+  <!-- <div *ngIf = "this.currenttab == 'takentest'" class="container">
+    <h4>Taken Tests</h4>
+    <br>
+      <div class = "row">
+  
+  <div class="col-lg-9">
+  
+  
+      <div  class="row">
+  
+        <div *ngFor="let details of takentest; let index=index;" class="col-lg-4 col-md-6 mb-4">
+          <div class="card h-100">
+          
+            <div class="card-body">
+              <h4 class="card-title">
+                <a  [routerLink]="['../sheet/',details.testid]">Name:-{{details.testname}}</a>
+              </h4>
+              <h5>No of questions is 10</h5>
+              <h5 >Pass mark is 5</h5>
+            </div>
+  
+          </div>
+        </div>
+      </div>
+  
+     
+       /.row 
+  
+    </div>
+  </div>
+  </div> -->
+  </body>

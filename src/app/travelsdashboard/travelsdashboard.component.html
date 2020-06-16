@@ -1,0 +1,104 @@
+<div *ngIf="this.accstatus=='pending'">
+    <h1>
+Your account has not been cleard by admin yet
+    </h1>
+</div>
+<div *ngIf="this.prod.length==0">
+    <h1>
+No bus has been added . Please add and return here
+    </h1>
+</div>
+<div *ngIf="this.accstatus!='pending'" class="container-fluid">
+<div >
+    <div class="card-header">
+      
+    </div>
+    <div class="card-body">
+      <!-- <h5 class="card-title">Enter the test name</h5>
+    <div>
+      <input type="text" #testname class = "form-control" placeholder="Enter test name">
+      </div> -->
+      <div class = "btn">
+        <button  class="btn btn-primary" (click) = "processdata();">Add a route</button>
+    </div>
+
+    
+    
+    </div>
+
+  </div>
+
+
+    <h4>Available Routes</h4>
+    <br>
+      <div class = "row">
+  
+  <div class="col-12">
+  
+  
+      <div  class="row">
+  
+        <div *ngFor="let details of prod; let index=index;" class="col-12">
+         
+          <div  class="card h-100">
+          
+            <div class="card-body">
+              <h4 class="card-title">
+               {{details.name}}
+              </h4>
+              <div class="row">
+                <div class="col-4">
+                  <h5>{{details.start}}</h5>
+                </div>
+                <div class="col-4">
+                    <h5>TO</h5>
+                </div>
+                <div class="col-4">
+                  <h5>{{details.end}}</h5>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <h5>Departure:- {{details.depdate}} at {{details.deptime}}</h5>
+                </div>
+            </div>
+              
+              
+              <button  class="btn btn-primary" (click) = "editRoute(details.routeid);">Edit Route</button>
+            </div>
+
+          </div>
+        </div>
+        
+      </div>
+  
+     
+      <!-- /.row -->
+  
+    </div>
+  </div>
+</div>
+ 
+ 
+ <!-- <div  class="row display">
+
+    <div *ngFor="let details of prod; " class="col-lg-4 col-md-6 mb-4">
+      <div class="card h-100">
+       
+        <div class="card-body">
+          <h5 class ="card-title">Longurl:</h5>
+          <h6 class="card-title">
+            <a  href="{{details.longurl}}">{{details.longurl}}</a>
+          </h6>
+          <h5 class ="card-title">Shorturl:</h5>
+          <h6 class="card-title">
+            <a  [routerLink]="[details.shorturl]">{{details.shorturl}}</a>
+          </h6>
+          <h5 class ="card-title">VisitCount from homepage:{{details.homevisitcount}}</h5>
+          <h5 class ="card-title">VisitCount from external:{{details.externalvisitcount}}</h5>
+          <a [routerLink]="['/history',details.shorturl]" class="btn btn-success">Show history</a>
+        </div>
+
+      </div>
+    </div>
+  </div> -->
